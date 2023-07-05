@@ -22,7 +22,12 @@ public class ClientInitializer implements ClientModInitializer {
         if(ArozxMod.noFallEnabled && playerJoin) {
             NoFall.onUpdate(client);
         }
-        // NightVision.getBrightness(client);
+        if(ArozxMod.nightVisionEnabled) {
+            NightVision.onUpdate(client);
+        }
+        if(ArozxMod.autoclickerEnabledL || ArozxMod.autoclickerEnabledR) {
+            Autoclicker.onUpdate();
+        }
     }
     private static void onPlayerJoin(ClientPlayNetworkHandler clientPlayNetworkHandler, PacketSender packetSender, MinecraftClient client) {
         playerJoin = !playerJoin;

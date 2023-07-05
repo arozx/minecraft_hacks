@@ -38,8 +38,32 @@ public class ArozxScreen extends Screen {
         else
             return (Text.literal("No fall disabled"));
     }
+    Text nightVisionText() {
+        if (ArozxMod.nightVisionEnabled)
+            return (Text.literal("Night vision enabled"));
+        else
+            return (Text.literal("Night vision disabled"));
+    }
+    Text autoclickerTextL() {
+        if (ArozxMod.autoclickerEnabledL)
+            return (Text.literal("Left autoclicker enabled"));
+        else
+            return (Text.literal("Left autoclicker disabled"));
+    }
+    Text autoclickerTextR() {
+        if (ArozxMod.autoclickerEnabledL)
+            return (Text.literal("Right autoclicker enabled"));
+        else
+            return (Text.literal("Right autoclicker disabled"));
+    }
 
     protected void init() {
+        // Night vision button
+        this.addDrawableChild(new ButtonWidget(this.width / 2 - 100, this.height / 6 + 6, 200, 20,
+                nightVisionText(), (button) -> {
+            ArozxMod.nightVisionEnabled = !ArozxMod.nightVisionEnabled;
+            button.setMessage(nightVisionText());
+        }));
         // Autofishing button
         this.addDrawableChild(new ButtonWidget(this.width / 2 - 100, this.height / 6 + 34, 200, 20,
                 autoFishingText(), (button) -> {
@@ -64,10 +88,20 @@ public class ArozxScreen extends Screen {
             ArozxMod.noFallEnabled = !ArozxMod.noFallEnabled;
             button.setMessage(noFallText());
         }));
-        // Back button
-        this.addDrawableChild(new ButtonWidget(this.width / 2 - 100, this.height / 6 + 146, 200, 20,
-                ScreenTexts.BACK, (button) -> {
-            this.client.setScreen(this.parent);
+        // Right autoclicker button
+        this.addDrawableChild(new ButtonWidget(this.width / 2, this.height / 6 + 146, 150, 20,
+                autoclickerTextR(), (button) -> {
+            ArozxMod.autoclickerEnabledR = !ArozxMod.autoclickerEnabledR;
+            button.setMessage(autoclickerTextR());
         }));
+        // Left autoclicker button
+        this.addDrawableChild(new ButtonWidget(this.width / 2 - 150, this.height / 6 + 146, 150, 20,
+                autoclickerTextL(), (button) -> {
+            ArozxMod.autoclickerEnabledL = !ArozxMod.autoclickerEnabledL;
+            button.setMessage(autoclickerTextL());
+        }));
+        // Back button
+        this.addDrawableChild(new ButtonWidget(this.width / 2 - 100, this.height / 6 + 174, 200, 20,
+                ScreenTexts.BACK, (button) -> this.client.setScreen(this.parent)));
     }
 }

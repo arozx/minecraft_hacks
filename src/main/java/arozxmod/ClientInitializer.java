@@ -11,6 +11,7 @@ import net.minecraft.client.network.ClientPlayNetworkHandler;
 @net.fabricmc.api.Environment(net.fabricmc.api.EnvType.CLIENT)
 public class ClientInitializer implements ClientModInitializer {
 
+    public static int count = Autoclicker.cps;
     public static boolean playerJoin = false;
     private static void onStartTick(MinecraftClient client) {
         if(ArozxMod.flyingEnabled) {

@@ -29,9 +29,22 @@ public class AutoclickerScreen extends Screen {
         else
             return (Text.literal("Right autoclicker disabled"));
     }
+    Text cpsText() {
+        if (ArozxMod.cpsEnabled)
+            return (Text.literal("Custom cps enabled"));
+        else
+            return (Text.literal("Custom cps disabled"));
+    }
 
     @Override
     protected void init() {
+        // Set cps button
+        this.addDrawableChild(new ButtonWidget(this.width / 2 - 150, this.height / 6 + 118, 150, 20,
+                cpsText(), (button) -> {
+            Autoclicker.cps =5;
+            ArozxMod.cpsEnabled = !ArozxMod.cpsEnabled;
+            button.setMessage(cpsText());
+        }));
         // Right autoclicker button
         this.addDrawableChild(new ButtonWidget(this.width / 2, this.height / 6 + 146, 150, 20,
                 autoclickerTextR(), (button) -> {

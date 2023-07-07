@@ -8,4 +8,5 @@ public class ArozxMod {
     public static boolean nightVisionEnabled = false;
     public static boolean autoclickerEnabledL = false;
     public static boolean autoclickerEnabledR = false;
+    public static boolean cpsEnabled = false;
 }

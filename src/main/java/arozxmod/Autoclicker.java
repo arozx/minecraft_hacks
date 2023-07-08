@@ -28,6 +28,7 @@ public class Autoclicker {
         if (ArozxMod.autoclickerEnabledL) {
             if (ArozxMod.cpsEnabled) {
                 if (count > 0) {
+                    cps = 20/cps;
                     count--;
                 } else {
                     lCooldownAttackMode = true;

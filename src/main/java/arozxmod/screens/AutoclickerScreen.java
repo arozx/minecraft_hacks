@@ -1,5 +1,7 @@
-package arozxmod;
+package arozxmod.screens;
 
+import arozxmod.Config;
+import arozxmod.Autoclicker;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.client.gui.screen.Screen;
@@ -18,19 +20,19 @@ public class AutoclickerScreen extends Screen {
     }
 
     Text autoclickerTextL() {
-        if (ArozxMod.autoclickerEnabledL)
+        if (Config.autoclickerEnabledL)
             return (Text.literal("Left autoclicker enabled"));
         else
             return (Text.literal("Left autoclicker disabled"));
     }
     Text autoclickerTextR() {
-        if (ArozxMod.autoclickerEnabledR)
+        if (Config.autoclickerEnabledR)
             return (Text.literal("Right autoclicker enabled"));
         else
             return (Text.literal("Right autoclicker disabled"));
     }
     Text cpsText() {
-        if (ArozxMod.cpsEnabled)
+        if (Config.cpsEnabled)
             return (Text.literal("Custom cps enabled"));
         else
             return (Text.literal("Custom cps disabled"));
@@ -42,19 +44,19 @@ public class AutoclickerScreen extends Screen {
         this.addDrawableChild(new ButtonWidget(this.width / 2 - 150, this.height / 6 + 118, 150, 20,
                 cpsText(), (button) -> {
             Autoclicker.cps =5;
-            ArozxMod.cpsEnabled = !ArozxMod.cpsEnabled;
+            Config.cpsEnabled = !Config.cpsEnabled;
             button.setMessage(cpsText());
         }));
         // Right autoclicker button
         this.addDrawableChild(new ButtonWidget(this.width / 2, this.height / 6 + 146, 150, 20,
                 autoclickerTextR(), (button) -> {
-            ArozxMod.autoclickerEnabledR = !ArozxMod.autoclickerEnabledR;
+            Config.autoclickerEnabledR = !Config.autoclickerEnabledR;
             button.setMessage(autoclickerTextR());
         }));
         // Left autoclicker button
         this.addDrawableChild(new ButtonWidget(this.width / 2 - 150, this.height / 6 + 146, 150, 20,
                 autoclickerTextL(), (button) -> {
-            ArozxMod.autoclickerEnabledL = !ArozxMod.autoclickerEnabledL;
+            Config.autoclickerEnabledL = !Config.autoclickerEnabledL;
             button.setMessage(autoclickerTextL());
         }));
         // Back button

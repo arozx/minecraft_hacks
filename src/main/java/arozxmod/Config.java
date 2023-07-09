@@ -1,6 +1,6 @@
 package arozxmod;
 
-public class ArozxMod {
+public class Config {
     public static boolean autoFishingEnabled = false;
     public static boolean normalFlyingEnabled = false;
     public static boolean flyingEnabled = false;

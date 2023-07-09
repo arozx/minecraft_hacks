@@ -1,5 +1,6 @@
-package arozxmod;
+package arozxmod.screens;
 
+import arozxmod.Config;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.client.gui.screen.Screen;
@@ -18,31 +19,31 @@ public class ArozxScreen extends Screen {
     }
 
     Text autoFishingText() {
-        if (ArozxMod.autoFishingEnabled)
+        if (Config.autoFishingEnabled)
             return (Text.literal("Autofishing enabled"));
         else
             return (Text.literal("Autofishing disabled"));
     }
     Text flyingText() {
-        if (ArozxMod.normalFlyingEnabled)
+        if (Config.normalFlyingEnabled)
             return (Text.literal("Flying enabled"));
         else
             return (Text.literal("Flying disabled"));
     }
     Text boatText() {
-        if (ArozxMod.flyingEnabled)
+        if (Config.flyingEnabled)
             return (Text.literal("Boat flying enabled"));
         else
             return (Text.literal("Boat flying disabled"));
     }
     Text noFallText() {
-        if (ArozxMod.noFallEnabled)
+        if (Config.noFallEnabled)
             return (Text.literal("No fall enabled"));
         else
             return (Text.literal("No fall disabled"));
     }
     Text nightVisionText() {
-        if (ArozxMod.nightVisionEnabled)
+        if (Config.nightVisionEnabled)
             return (Text.literal("Night vision enabled"));
         else
             return (Text.literal("Night vision disabled"));
@@ -53,31 +54,31 @@ public class ArozxScreen extends Screen {
         // Night vision button
         this.addDrawableChild(new ButtonWidget(this.width / 2 - 100, this.height / 6 + 6, 200, 20,
                 nightVisionText(), (button) -> {
-            ArozxMod.nightVisionEnabled = !ArozxMod.nightVisionEnabled;
+            Config.nightVisionEnabled = !Config.nightVisionEnabled;
             button.setMessage(nightVisionText());
         }));
         // Autofishing button
         this.addDrawableChild(new ButtonWidget(this.width / 2 - 100, this.height / 6 + 34, 200, 20,
                 autoFishingText(), (button) -> {
-            ArozxMod.autoFishingEnabled = !ArozxMod.autoFishingEnabled;
+            Config.autoFishingEnabled = !Config.autoFishingEnabled;
             button.setMessage(autoFishingText());
         }));
         // Flying button
         this.addDrawableChild(new ButtonWidget(this.width / 2 - 100, this.height / 6 + 62, 200, 20,
                 flyingText(), (button) -> {
-            ArozxMod.normalFlyingEnabled = !ArozxMod.normalFlyingEnabled;
+            Config.normalFlyingEnabled = !Config.normalFlyingEnabled;
             button.setMessage(flyingText());
         }));
         // Boat flying button
         this.addDrawableChild(new ButtonWidget(this.width / 2 - 100, this.height / 6 + 90, 200, 20,
                 boatText(), (button) -> {
-            ArozxMod.flyingEnabled = !ArozxMod.flyingEnabled;
+            Config.flyingEnabled = !Config.flyingEnabled;
             button.setMessage(boatText());
         }));
         // No fall button
         this.addDrawableChild(new ButtonWidget(this.width / 2 - 100, this.height / 6 + 118, 200, 20,
                 noFallText(), (button) -> {
-            ArozxMod.noFallEnabled = !ArozxMod.noFallEnabled;
+            Config.noFallEnabled = !Config.noFallEnabled;
             button.setMessage(noFallText());
         }));
         // Back button

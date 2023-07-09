@@ -3,14 +3,10 @@ package arozxmod;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.Vec3d;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 
 public class Flying {
-
-    public static final Logger LOGGER = LoggerFactory.getLogger("FlyingMod");
-
+    //public static final Logger LOGGER = LoggerFactory.getLogger("FlyingMod");
 
     static int toggle = 0;
     static int MAX_SPEED = 3;
@@ -20,7 +16,7 @@ public class Flying {
 
     public static void tick(MinecraftClient client) {
 
-        if(client.player!=null && ArozxMod.normalFlyingEnabled) {
+        if(client.player!=null && Config.normalFlyingEnabled) {
             // debug
             // LOGGER.info(String.valueOf(client.player));
 

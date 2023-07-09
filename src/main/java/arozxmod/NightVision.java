@@ -20,7 +20,7 @@ public final class NightVision {
 
     private static void updateGamma() {
 
-        if (ArozxMod.nightVisionEnabled) {
+        if (Config.nightVisionEnabled) {
             setGamma(16);
             return;
         }

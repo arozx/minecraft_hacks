@@ -25,8 +25,8 @@ public class Autoclicker {
 
     public static void onUpdate() {
         assert MinecraftClient.getInstance().player != null;
-        if (ArozxMod.autoclickerEnabledL) {
-            if (ArozxMod.cpsEnabled) {
+        if (Config.autoclickerEnabledL) {
+            if (Config.cpsEnabled) {
                 if (count > 0) {
                     cps = 20/cps;
                     count--;
@@ -53,8 +53,8 @@ public class Autoclicker {
             }
         }
         // Right autoclicker
-        if (ArozxMod.autoclickerEnabledR) {
-            if (ArozxMod.cpsEnabled) {
+        if (Config.autoclickerEnabledR) {
+            if (Config.cpsEnabled) {
                 if (count > 0) {
                     count--;
                 } else {

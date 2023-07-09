@@ -14,19 +14,19 @@ public class ClientInitializer implements ClientModInitializer {
     public static int count = Autoclicker.cps;
     public static boolean playerJoin = false;
     private static void onStartTick(MinecraftClient client) {
-        if(ArozxMod.flyingEnabled) {
+        if(Config.flyingEnabled) {
             BoatFlying.onUpdate();
         }
-        if(ArozxMod.normalFlyingEnabled) {
+        if(Config.normalFlyingEnabled) {
             Flying.tick(client);
         }
-        if(ArozxMod.noFallEnabled && playerJoin) {
+        if(Config.noFallEnabled && playerJoin) {
             NoFall.onUpdate(client);
         }
-        if(ArozxMod.nightVisionEnabled) {
+        if(Config.nightVisionEnabled) {
             NightVision.onUpdate(client);
         }
-        if(ArozxMod.autoclickerEnabledL || ArozxMod.autoclickerEnabledR) {
+        if(Config.autoclickerEnabledL || Config.autoclickerEnabledR) {
             Autoclicker.onUpdate();
         }
     }

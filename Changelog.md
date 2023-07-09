@@ -15,7 +15,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 - Moved autoclicker to new menu
 - Updated fabric.mod.json
 - Changed classtypes in ArozxScreen.java
-
+- Added ability to have a fixed cps
 
 ## [1.0.1] - 2023-07-05
 

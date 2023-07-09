@@ -1,7 +1,7 @@
 package arozxmod.mixin;
 
-import arozxmod.ArozxScreen;
-import arozxmod.AutoclickerScreen;
+import arozxmod.screens.ArozxScreen;
+import arozxmod.screens.AutoclickerScreen;
 import net.minecraft.client.gui.screen.GameMenuScreen;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.widget.ButtonWidget;

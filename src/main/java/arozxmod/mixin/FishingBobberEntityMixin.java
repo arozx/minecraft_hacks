@@ -1,6 +1,6 @@
 package arozxmod.mixin;
 
-import arozxmod.ArozxMod;
+import arozxmod.Config;
 import net.minecraft.entity.data.TrackedData;
 import net.minecraft.entity.projectile.FishingBobberEntity;
 import org.spongepowered.asm.mixin.Mixin;
@@ -20,7 +20,7 @@ public class FishingBobberEntityMixin {
 
         MinecraftClient client = MinecraftClient.getInstance();
 
-        if (caughtFish && ArozxMod.autoFishingEnabled) {
+        if (caughtFish && Config.autoFishingEnabled) {
             client.interactionManager.interactItem(client.player, Hand.MAIN_HAND);
 
             try {

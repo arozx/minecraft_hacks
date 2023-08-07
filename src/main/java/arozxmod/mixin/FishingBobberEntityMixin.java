@@ -24,7 +24,7 @@ public class FishingBobberEntityMixin {
             client.interactionManager.interactItem(client.player, Hand.MAIN_HAND);
 
             try {
-                Thread.sleep(1000);
+                Thread.sleep(2000);
             } catch (InterruptedException e) {
                 Thread.currentThread().interrupt();
             }

@@ -6,6 +6,7 @@ import net.minecraft.client.util.InputUtil;
 import org.lwjgl.glfw.GLFW;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import arozxmod.screens.AutoclickerScreen;
 
 import static arozxmod.ClientInitializer.count;
 
@@ -26,7 +27,7 @@ public class Autoclicker {
     public static void onUpdate() {
         assert MinecraftClient.getInstance().player != null;
         if (Config.autoclickerEnabledL) {
-            if (Config.cpsEnabled) {
+            if (Config.cpsEnabled && Config.cps>0) {
                 if (count > 0) {
                     cps = 20/cps;
                     count--;
@@ -54,7 +55,7 @@ public class Autoclicker {
         }
         // Right autoclicker
         if (Config.autoclickerEnabledR) {
-            if (Config.cpsEnabled) {
+            if (Config.cpsEnabled && Config.cps>0) {
                 if (count > 0) {
                     count--;
                 } else {

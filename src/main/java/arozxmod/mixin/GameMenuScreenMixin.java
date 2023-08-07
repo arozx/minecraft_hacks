@@ -5,6 +5,7 @@ import arozxmod.screens.AutoclickerScreen;
 import net.minecraft.client.gui.screen.GameMenuScreen;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.widget.ButtonWidget;
+import net.minecraft.text.MutableText;
 import net.minecraft.text.Text;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -17,13 +18,20 @@ public abstract class GameMenuScreenMixin extends Screen {
 
     @Inject(at = @At("HEAD"), method = "initWidgets")
     private void initWidgets(CallbackInfo ci) {
-        this.addDrawableChild(new ButtonWidget(10, 10, 90, 20, Text.literal("Mod Menu"), (button) -> {
 
-            this.client.setScreen(new ArozxScreen(this, this.client.options));
-        }));
-        this.addDrawableChild(new ButtonWidget(10, 30, 90, 20, Text.literal("Autoclicker"), (button) -> {
 
-            this.client.setScreen(new AutoclickerScreen(this, this.client.options));
-        }));
+        addDrawableChild(ButtonWidget.builder(Text.of("Mode Menu"), button -> {
+                    this.client.setScreen(new ArozxScreen(this, this.client.options));
+                }).dimensions(10, 10, 90, 20)
+                .position(10, 10)
+                .narrationSupplier((NarrationSupplier) -> (MutableText) Text.of("Toggle Setting 1"))
+                .build());
+
+        addDrawableChild(ButtonWidget.builder(Text.of("Autoclicker"), button -> {
+                    this.client.setScreen(new AutoclickerScreen(this, this.client.options));
+                }).dimensions(10, 10, 90, 20)
+                .position(10, 40)
+                .narrationSupplier((NarrationSupplier) -> (MutableText) Text.of("Toggle Setting 1"))
+                .build());
     }
 }

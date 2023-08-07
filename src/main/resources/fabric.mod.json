@@ -1,32 +1,32 @@
 {
-	"schemaVersion": 1,
-	"id": "arozxmod",
-	"version": "${version}",
-	"name": "ArozxMod",
-	"description": "Adds a few client side hacks.",
-	"authors": [
-		"arozx"
-	],
-	"contact": {
-		"homepage": "https://github.com/arozx",
-		"sources": "https://github.com/arozx/minecraft_hacks",
-		"issues": "https://github.com/arozx/minecraft_hacks/issues"
-	},
-	"license": "MIT",
-	"icon": "assets/arozxmod/icon.png",
-	"environment": "client",
-	"entrypoints": {
-		"client": [
-			"arozxmod.ClientInitializer"
-		]
-	},
-	"mixins": [
-		"arozxmod.mixins.json"
-	],
-	"depends": {
-		"fabricloader": ">=0.14.21",
-		"minecraft": "~1.19.2",
-		"java": ">=17",
-		"fabric-api": "*"
-	}
+  "schemaVersion": 1,
+  "id": "arozxmod",
+  "version": "${version}",
+  "name": "Arozx's Hacks",
+  "description": "",
+  "authors": [
+    "Arozx"
+  ],
+  "contact": {
+    "homepage": "https://github.com/arozx",
+    "sources": "https://github.com/arozx/minecraft_hacks",
+    "issues": "https://github.com/arozx/minecraft_hacks/issues"
+  },
+  "license": "MIT",
+  "icon": "assets/arozxmod/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "arozxmod.ClientInitializer"
+    ]
+  },
+  "mixins": [
+    "arozxmod.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.14.21",
+    "minecraft": "1.20.1",
+    "java": ">=17",
+    "fabric-api": "*"
+  }
 }

@@ -9,4 +9,5 @@ public class Config {
     public static boolean autoclickerEnabledL = false;
     public static boolean autoclickerEnabledR = false;
     public static boolean cpsEnabled = false;
+    public static int cps = 20;
 }
